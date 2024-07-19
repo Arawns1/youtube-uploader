@@ -1,0 +1,28 @@
+{
+  "name": "youtube-uploader",
+  "version": "0.0.1",
+  "description": "Node application that uploads videos to YouTube without Google API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arawns1/youtube-uploader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arawns1/youtube-uploader/issues"
+  },
+  "homepage": "https://github.com/Arawns1/youtube-uploader#readme",
+  "engines": {
+    "node": ">=18.12.1"
+  },
+  "dependencies": {
+    "puppeteer": "^22.13.1"
+  }
+}
