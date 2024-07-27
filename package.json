@@ -23,6 +23,8 @@
     "node": ">=18.12.1"
   },
   "dependencies": {
+    "amqplib": "^0.10.4",
+    "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "puppeteer": "^22.13.1",
     "puppeteer-extra": "^3.3.6",
