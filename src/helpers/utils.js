@@ -1,7 +1,7 @@
 function delay(time) {
-    return new Promise(function (resolve) {
-        setTimeout(resolve, time)
-    });
+  return new Promise(function (resolve) {
+    setTimeout(resolve, time)
+  })
 }
 
-export { delay };
+export { delay }
