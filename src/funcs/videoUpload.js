@@ -81,23 +81,22 @@ class VideoUploadForm {
     // Go to checks step
     await this.page.hover(this.identifiers.nextButton)
     await this.elements.nextButton().click()
-    await delay(2000)
-    await this.page.waitForSelector(this.identifiers.checksCompleteLabel, { visible: true, timeout: 0 });
-    await this.page.waitForFunction(
-      (selector, text) => document.querySelector(selector).innerText === text,
-      { timeout: 0 },
-      this.identifiers.checksCompleteLabel,
-      'Checks complete. No issues found.'
-    );
+    await delay(40000)
+    // await this.page.waitForSelector(this.identifiers.checksCompleteLabel, { visible: true, timeout: 0 });
+    // await this.page.waitForFunction(
+    //   (selector, text) => document.querySelector(selector).innerText === text,
+    //   { timeout: 12000 },
+    //   this.identifiers.checksCompleteLabel,
+    //   'Checks complete. No issues found.'
+    // );
 
-    await this.page.waitForSelector(this.identifiers.passedChecksLabel, { visible: true, timeout: 0 });
-    await this.page.waitForFunction(
-      (selector, text) => document.querySelector(selector).innerText === text,
-      { timeout: 0 },
-      this.identifiers.passedChecksLabel,
-      'No issues found.'
-    );
-    await delay(5000)
+    // await this.page.waitForSelector(this.identifiers.passedChecksLabel, { visible: true, timeout: 0 });
+    // await this.page.waitForFunction(
+    //   (selector, text) => document.querySelector(selector).innerText === text,
+    //   { timeout: 10000 },
+    //   this.identifiers.passedChecksLabel,
+    //   'No issues found.'
+    // );
 
     // Go to visibility step
     await this.elements.nextButton().click()
@@ -134,7 +133,9 @@ class VideoUploadForm {
       visible: true,
       timeout: 0,
     })
-    return await this.page.$eval(this.identifiers.youtubeLink, (el) => el.textContent)
+
+    const youtubeLink = await this.page.$eval(this.identifiers.youtubeLink, (el) => el.href)
+    return youtubeLink
   }
 }
 
